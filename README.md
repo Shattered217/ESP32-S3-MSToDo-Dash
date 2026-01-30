@@ -4,6 +4,10 @@
 
 一个基于 **ESP32-S3 + LVGL** 的待办事项小工具，界面显示跑在 240x320 LCD 上，通过 HTTP 与后端 **Flask** 服务交互，支持触摸操作、滚动列表、长按查看详情等功能。
 
+### 实物展示
+
+![实物展示](https://github.com/user-attachments/assets/11a68bc5-abc1-45bf-9296-c2306b532e7d)
+
 ### 功能特点
 
 - **待办事项展示**
