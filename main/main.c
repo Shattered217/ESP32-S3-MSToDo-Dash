@@ -20,7 +20,7 @@
 
 static const char *TAG = "TODO_APP";
 
-#define SERVER_URL "http://192.168.101.224:5000"
+#define SERVER_URL CONFIG_TODO_SERVER_URL
 
 #define REFRESH_INTERVAL_MS (30 * 60 * 1000)
 

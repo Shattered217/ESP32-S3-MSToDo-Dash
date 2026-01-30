@@ -110,27 +110,33 @@
 
 ### ESP32 端配置
 
-#### 1. 配置服务器地址
+本项目使用 **Kconfig** 管理配置，WiFi、服务器地址、API Key 均通过菜单配置，无需修改源代码。
 
-在 `main.c` 中：
+#### 方法一：菜单配置（推荐）
 
-```c
-#define SERVER_URL "http://192.168.101.224:5000"
+```bash
+idf.py menuconfig
 ```
 
-请将 `192.168.101.224` 修改为 **你运行 Flask 后端的电脑 IP**。
+在菜单中进入 **Component config** → **TODO App Configuration**，修改：
 
-#### 2. 配置 API Key
+| 配置项                         | 说明                                                |
+| ------------------------------ | --------------------------------------------------- |
+| **Flask Server URL**           | 你的 Flask 后端地址，如 `http://192.168.1.100:5000` |
+| **API Key for authentication** | 与 Flask 后端一致的密钥                             |
+| **WiFi SSID**                  | WiFi 网络名称                                       |
+| **WiFi Password**              | WiFi 密码                                           |
 
-ESP32 端配置与 Flask 端一致的密钥（`todo_client.c`）：
+保存退出后执行 `idf.py build`。
 
-```c
-#define API_KEY "esp32-todo-secret-key-2025"
-```
+#### 方法二：编辑 sdkconfig
 
-#### 3. WiFi 配置
+首次编译后会生成 `sdkconfig`，可直接编辑其中的：
 
-在 `wifi_manager.c` 中配置你的 WiFi SSID / 密码
+- `CONFIG_TODO_SERVER_URL`
+- `CONFIG_TODO_API_KEY`
+- `CONFIG_WIFI_SSID`
+- `CONFIG_WIFI_PASSWORD`
 
 ### HTTP 接口
 

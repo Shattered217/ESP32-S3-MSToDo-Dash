@@ -12,7 +12,7 @@
 static const char *TAG = "todo_client";
 static char server_url[128] = {0};
 
-#define API_KEY "esp32-todo-secret-key-2025"
+#define API_KEY CONFIG_TODO_API_KEY
 
 #define HTTP_BUFFER_SIZE 4096
 static char http_buffer[HTTP_BUFFER_SIZE];

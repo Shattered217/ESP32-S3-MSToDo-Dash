@@ -1,0 +1,29 @@
+menu "TODO App Configuration"
+
+    config TODO_SERVER_URL
+        string "Flask Server URL"
+        default "http://192.168.1.100:5000"
+        help
+            Flask 后端服务器地址，例如: http://192.168.1.100:5000
+            请修改为你的实际服务器 IP 地址
+
+    config TODO_API_KEY
+        string "API Key for authentication"
+        default "esp32-todo-secret-key-2025"
+        help
+            用于与 Flask 后端通信的 API 密钥
+            必须与后端配置保持一致
+
+    config WIFI_SSID
+        string "WiFi SSID"
+        default "YourWiFiSSID"
+        help
+            WiFi 网络名称（SSID）
+
+    config WIFI_PASSWORD
+        string "WiFi Password"
+        default "YourWiFiPassword"
+        help
+            WiFi 网络密码
+
+endmenu
