@@ -1,0 +1,25 @@
+idf_component_register(SRCS 
+                        "main.c" 
+                        "Vernon_ST7789T/Vernon_ST7789T.c" 
+                        "lvgl_driver.c"
+                        "wifi_manager.c"
+                        "todo_client.c"
+                        "todo_ui.c"
+                        "lv_font_chinese_14.c"
+                        "touch_driver.c"
+                        "touch_cst328.c"
+                        "esp_lcd_touch.c"
+                    INCLUDE_DIRS 
+                        "." 
+                        "Vernon_ST7789T"
+                    REQUIRES 
+                        esp_http_client
+                        nvs_flash
+                        espressif__cjson
+                        esp_lcd
+                        driver
+                        esp_wifi
+                        esp_netif
+                        esp_driver_ledc
+                        esp_driver_spi
+                        esp_driver_i2c)
